@@ -1,9 +1,9 @@
-CFLAGS = -std=c99 -g -pedantic -Wall
+CFLAGS = -std=c99 -pedantic -Wall
 CC = gcc
 
-all: array.o array.h test1 test2 test3 test4 test5 test6 test7 test8
+all: array.o array.h
 
-array.o: array.c
+array.o: array.c array.h
 	$(CC) $(CFLAGS) -c array.c
 
 test1.o: test1.c
@@ -55,4 +55,4 @@ test8: test8.o array.o array.h
 	$(CC) $(CFLAGS) test8.o array.o -o test8
 
 clean:
-	rm *.o test1 test2 test3 test4 test5 test6 test7 test8
+	rm *.o

@@ -1,6 +1,9 @@
 //Author: Sean Shaya Feigis
 //ID: 1096849
 //Header file for the assignment
+#ifndef     _ARRAY_H
+#define     _ARRAY_H
+
 struct Performance *newPerformance();
 struct Array *newArray( struct Performance *performance, unsigned int width, unsigned int capacity);
 void readItem(struct Performance *performance, struct Array *array, unsigned int index, void *dest);
@@ -13,6 +16,7 @@ void prependItem(struct Performance *performance, struct Array *array, void *src
 void deleteItem(struct Performance *performance, struct Array *array, unsigned int index);
 int findItem(struct Performance *performance, struct Array *array, int (*compar)(const void *, const void*), void *target) ;
 int searchItem( struct Performance *performance, struct Array *array, int (*compar)(const void*, const void *), void *target);
+
 struct Array {
   unsigned int width;
   unsigned int nel;
@@ -26,3 +30,5 @@ struct Performance {
   unsigned int mallocs;
   unsigned int frees;
 };
+
+#endif /* <array.h> included */
