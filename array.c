@@ -75,9 +75,6 @@ void contract(struct Performance *performance, struct Array *array ) {
     exit(0);
   } else {
     array->nel--; //decrement nel
-    if (array->nel == 0) {
-      free(array->data); //frees data if nel ==0, as found to do in FAQ
-    }
   }
 }
 
